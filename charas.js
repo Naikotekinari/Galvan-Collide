@@ -10,5 +10,8 @@ export const charas = [
     ],
     [
         {name: "Meteion", priority: 3, image: "img/meteion.png"}
+    ],
+    [
+        {name: "Zodiark", priority: 4, image: "img/zodiark.png"}
     ]
 ]
