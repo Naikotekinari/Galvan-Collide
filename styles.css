@@ -1,10 +1,21 @@
-.column {
-  float: left;
-  width: 50%;
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both; 
+.row {
+  display: flex;
+  margin: 100px;
+  width: 500px;
+  height: 650px;
+  padding-top: 15%;
+  background-color: aqua;
+  position: relative;
+}
+
+.column {
+  flex: 25%;
+  padding: 10px;
 }
