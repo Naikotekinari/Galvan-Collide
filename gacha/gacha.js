@@ -20,12 +20,9 @@ function init() {
   const tenPullButton = document.getElementById("gacha10Pull");
   const fourPityText = document.getElementById("fourPity");
   const fivePityText = document.getElementById("fivePity");
-  const guaranteedText = document.getElementById("guaranteed?");
+  const guaranteedText = document.getElementById("guaranteed");
   const eventBannerCheckbox = document.getElementById("enableEvent");
   const deleteLocal = document.getElementById("deleteLocal")
-
-  fourPityText.textContent = "fourPity: " + fourPity;
-fivePityText.textContent = "fivePity: " + fivePity;
 
   let eventBannerLS = localStorage.getItem("eventBanner")
   console.log(eventBannerLS)
@@ -43,12 +40,26 @@ fivePityText.textContent = "fivePity: " + fivePity;
   }
 
   let fivePityD = localStorage.getItem("fivePityD")
+  let fourPityD = localStorage.getItem("fourPityD")
+  let fiveGuaranteedD = localStorage.getItem("fiveGuaranteedD")
 
   console.log(`LS 5 pity: ${fivePityD}`)
 
   fivePity = fivePity + parseInt(fivePityD)
+  fourPity = fourPity + parseInt(fourPityD)
+  fiveGuaranteed = fiveGuaranteedD
 
-  console.log(`base + LS pity: ${fivePity}`)
+  console.log(`base + LS 5 pity: ${fivePity}`)
+  console.log(`base + LS 4 pity: ${fourPity}`)
+  console.log(`five guaranteed: ${fiveGuaranteed}`)
+
+  fourPityText.textContent = "fourPity: " + fourPity;
+  fivePityText.textContent = "fivePity: " + fivePity;
+  if (fiveGuaranteed === true) {
+    guaranteedText.innerHTML = "guaranteed!"
+  } else {
+    guaranteedText.innerHTML = "not guaranteed."
+  }
 
   onePullButton.addEventListener("click", function () {
     gachaActivate(1);
@@ -92,6 +103,8 @@ fivePityText.textContent = "fivePity: " + fivePity;
     fourPityText.textContent = "fourPity: " + fourPity;
     fivePityText.textContent = "fivePity: " + fivePity;
     localStorage.setItem("fivePityD", fivePity)
+    localStorage.setItem("fourPityD", fourPity)
+    localStorage.setItem("fiveGuaranteedD", fiveGuaranteed)
     localStorage.setItem("gachaRollCharas", JSON.stringify(gachaRollCharas));
     loadResults()
   }
