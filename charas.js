@@ -7,5 +7,5 @@ export const charas = [
 
   { name: "Meteion", priority: 3, img: "img/meteion.png" },
 
-  { name: "Zodiark", priority: 4, img: "img/zodiark.png" },
+  { name: "Zodiark", priority: 4, img: "img/zodiark.jpg" },
 ];

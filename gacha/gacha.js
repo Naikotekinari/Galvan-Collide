@@ -10,7 +10,7 @@ let fourGuaranteed = false;
 let gachaRollCharas = [""];
 let item = [];
 let fiveChance = 9950;
-let fourChance = 9200;
+let fourChance = 9250;
 
 console.log("Is working");
 
@@ -22,6 +22,10 @@ function init() {
   const fivePityText = document.getElementById("fivePity");
   const guaranteedText = document.getElementById("guaranteed?");
   const eventBannerCheckbox = document.getElementById("enableEvent");
+  const deleteLocal = document.getElementById("deleteLocal")
+
+  fourPityText.textContent = "fourPity: " + fourPity;
+fivePityText.textContent = "fivePity: " + fivePity;
 
   let eventBannerLS = localStorage.getItem("eventBanner")
   console.log(eventBannerLS)
@@ -37,6 +41,14 @@ function init() {
     console.log(`event banner is turned on (LS)`);
     localStorage.setItem("eventBanner", "true");
   }
+
+  let fivePityD = localStorage.getItem("fivePityD")
+
+  console.log(`LS 5 pity: ${fivePityD}`)
+
+  fivePity = fivePity + parseInt(fivePityD)
+
+  console.log(`base + LS pity: ${fivePity}`)
 
   onePullButton.addEventListener("click", function () {
     gachaActivate(1);
@@ -60,27 +72,36 @@ function init() {
     }
   });
 
+  deleteLocal.addEventListener("click", function() {
+    localStorage.clear()
+  }) 
+
   console.log(gachaEventCharas.limited4Stars[0]);
   console.log(gachaStandardCharas.gacha3Stars[0]);
 
   function gachaActivate(i) {
     gachaRollCharas = [];
+    fiveChance = 9950
     for (let ii = 0; ii < i; ii++) {
       gachaRoll(ii);
       console.log(fivePity);
       console.log(fourPity);
-      console.log(gachaRollCharas[0]);
+      console.log(gachaRollCharas[ii]);
+      fiveChance = 9950
     }
-    fourPityText.textContent = fourPity;
-    fivePityText.textContent = fivePity;
+    fourPityText.textContent = "fourPity: " + fourPity;
+    fivePityText.textContent = "fivePity: " + fivePity;
+    localStorage.setItem("fivePityD", fivePity)
     localStorage.setItem("gachaRollCharas", JSON.stringify(gachaRollCharas));
-    window.location.href = "gachaResults.html"
+    loadResults()
   }
 
   function gachaRoll(i) {
+    console.log("NEW ROLL")
     if (fivePity > 72) {
-      fiveChance = 9950 - fivePity * 10;
+      fiveChance = fiveChance - fivePity * 10;
       console.log(`soft pity, current pity is: ${fiveChance}`);
+      console.log(`what`)
     }
     if (fivePity > 89) {
       fiveRoll();
@@ -90,6 +111,7 @@ function init() {
       let gachaRNG = RNG(10000);
       if (gachaRNG > fiveChance) {
         fiveRoll();
+        console.log(`boops. big one`)
         return (gachaRollCharas[i] = item);
       } else {
         fourRoll();
@@ -98,8 +120,10 @@ function init() {
       }
     } else {
       let gachaRNG = RNG(10000);
+      console.log(`gachaRNG: ${gachaRNG}`)
       if (gachaRNG > fiveChance) {
         fiveRoll();
+        console.log(`simply lucky.`)
         return (gachaRollCharas[i] = item);
       } else if (gachaRNG > fourChance) {
         fourRoll();
@@ -129,6 +153,7 @@ function init() {
     console.log(`charaRNG: ${charaRNG}`);
     fivePity = 0;
     fourPity = fourPity + 1;
+    fiveGuaranteed = true
     console.log("50/50 lost...");
     return item = gachaStandardCharas.gacha5Stars[charaRNG - 1];
   }
@@ -137,12 +162,14 @@ function init() {
 function fourRoll() {
   if (eventBanner === true) {
     let eventRoll = RNG(3);
+    console.log(`4 star`)
     console.log(eventRoll);
     if (eventRoll > 1 || fourGuaranteed) {
       let charaRNG = RNG(gachaEventCharas.limited4Stars.length);
       console.log(`charaRNG: ${charaRNG}`);
       fourPity = 0;
       fivePity = fivePity + 1;
+      fourGuaranteed = false
       console.log("event 4 star");
       return item = gachaEventCharas.limited4Stars[charaRNG - 1];
     }
@@ -150,6 +177,7 @@ function fourRoll() {
   let charaRNG = RNG(gachaStandardCharas.gacha4Stars.length);
   console.log(`charaRNG: ${charaRNG}`);
   fourPity = 0;
+  fourGuaranteed = true;
   fivePity = fivePity + 1;
   console.log("Standard 4 star");
   return item = gachaStandardCharas.gacha4Stars[charaRNG - 1];
@@ -169,4 +197,8 @@ function RNG(maxNum) {
   let num = Math.floor(Math.random() * maxNum + 1);
   console.log(`the number was ${num}`);
   return num;
+}
+
+function loadResults() {
+  window.location.href = "gachaResults.html"
 }

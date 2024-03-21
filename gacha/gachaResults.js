@@ -28,6 +28,8 @@ function init() {
     console.log(charaImg[i])
     gachaImages[i].src = "/" + charaImg[i].img
   }
-  
+
+  let thisWorkPlease = localStorage.getItem("gachaData")
+  console.log(thisWorkPlease)
   console.log(charaImg[0].name)
 }
