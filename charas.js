@@ -1,17 +1,11 @@
 export const charas = [
-    [
-        {name: "Trash", priority: 0, image: "img/trash.png"}
-    ]
-    [
-        {name: "Zenos", priority: 1, image: "img/zenos.png"}
-    ],
-    [
-        {name: "Emet-Selch", priority: 2, image: "img/emetselch.png"}
-    ],
-    [
-        {name: "Meteion", priority: 3, image: "img/meteion.png"}
-    ],
-    [
-        {name: "Zodiark", priority: 4, image: "img/zodiark.png"}
-    ]
-]
+  { name: "Trash", priority: 0, img: "img/trash.png" },
+
+  { name: "Zenos", priority: 1, img: "img/zenos.png" },
+
+  { name: "Emet-Selch", priority: 2, img: "img/emetselch.png" },
+
+  { name: "Meteion", priority: 3, img: "img/meteion.png" },
+
+  { name: "Zodiark", priority: 4, img: "img/zodiark.png" },
+];
