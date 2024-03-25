@@ -19,3 +19,7 @@
   flex: 25%;
   padding: 10px;
 }
+
+.chButton {
+  padding-bottom: 0px;
+}
