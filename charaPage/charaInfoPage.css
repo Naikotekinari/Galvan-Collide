@@ -1,0 +1,22 @@
+.eiClock {
+    height: 500px;
+    width: 500px;
+    background-color: #000000;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.eiPiece1 {
+    position: relative;
+    top: 14%;
+    left: 37%;
+    transform: translate(-50%, -50%);
+    transform: rotate(236deg);
+    Height: 0px;
+    Width: 0px;
+    border-radius: 0px 0px 145px 145px;
+    border-bottom: 225px solid #555;
+    border-left: 150px solid transparent;
+    border-right: 180px solid transparent; 
+    background-color: transparent;
+}

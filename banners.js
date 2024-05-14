@@ -19,3 +19,4 @@ export const gachaEventCharas = {
         {name: "Zodiark", charaID: 4}
     ]
 }
+//among us
