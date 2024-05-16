@@ -1,22 +1,172 @@
 .eiClock {
     height: 500px;
     width: 500px;
-    background-color: #000000;
+    background-color: rgb(100, 68, 97);
     border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+.eiClockBG {
+    height: 450px;
+    width: 450px;
+    background-color: #1e072d;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
     display: inline-block;
 }
 
+.eiClockMid {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+
 .eiPiece1 {
-    position: relative;
-    top: 14%;
-    left: 37%;
-    transform: translate(-50%, -50%);
-    transform: rotate(236deg);
+    position: absolute;
+    top: 40px;
+    left: 245px;
+    transform: rotate(240deg);
     Height: 0px;
     Width: 0px;
     border-radius: 0px 0px 145px 145px;
-    border-bottom: 225px solid #555;
-    border-left: 150px solid transparent;
-    border-right: 180px solid transparent; 
+    border-bottom: 260px solid rgb(222, 235, 249);
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent; 
     background-color: transparent;
+    transition: all ease-in-out 0s;
+}
+
+.eiPiece2 {
+    position: absolute;
+    top: 200px;
+    left: 245px;
+    transform: rotate(300deg);
+    Height: 0px;
+    Width: 0px;
+    border-radius: 0px 0px 145px 145px;
+    border-bottom: 260px solid rgb(222, 235, 249);
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent; 
+    background-color: transparent;
+    transition: all ease-in-out 0s;
+}
+.eiPiece3 {
+    position: absolute;
+    top: 280px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: rotate(0deg);
+    Height: 0px;
+    Width: 0px;
+    border-radius: 0px 0px 145px 145px;
+    border-bottom: 260px solid rgb(222, 235, 249);
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent; 
+    background-color: transparent;
+    transition: all ease-in-out 0s;
+}
+
+.eiPiece4 {
+    position: absolute;
+    top: 200px;
+    left: -25px;
+    transform: rotate(60deg);
+    Height: 0px;
+    Width: 0px;
+    border-radius: 0px 0px 145px 145px;
+    border-bottom: 260px solid rgb(222, 235, 249);
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent; 
+    background-color: transparent;
+    transition: all ease-in-out 0s;
+}
+
+.eiPiece5 {
+    position: absolute;
+    top: 40px;
+    left: -25px;
+    transform: rotate(120deg);
+    Height: 0px;
+    Width: 0px;
+    border-radius: 0px 0px 145px 145px;
+    border-bottom: 260px solid rgb(222, 235, 249);
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent; 
+    background-color: transparent;
+    transition: all ease-in-out 0s;
+}
+
+.eiPiece6 {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: rotate(180deg);
+    Height: 0px;
+    Width: 0px;
+    border-radius: 0px 0px 145px 145px;
+    border-bottom: 260px solid rgb(222, 235, 249);
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent; 
+    background-color: transparent;
+    transition: all ease-in-out 0s;
+}
+
+.eiPiece1:hover {
+    transition: all ease-in-out 0.5s;
+    transform: rotate(240deg) scale(1.1);
+}
+
+.eiPiece2:hover {
+    transition: all ease-in-out 0.5s;
+    transform: rotate(300deg) scale(1.1);
+}
+
+.eiPiece3:hover {
+    transition: all ease-in-out 0.5s;
+    transform: rotate(0deg) scale(1.1);
+}
+
+.eiPiece4:hover {
+    transition: all ease-in-out 0.5s;
+    transform: rotate(60deg) scale(1.1);
+}
+
+.eiPiece5:hover {
+    transition: all ease-in-out 0.5s;
+    transform: rotate(120deg) scale(1.1);
+}
+
+.eiPiece6:hover {
+    transition: all ease-in-out 0.5s;
+    transform: rotate(180deg) scale(1.1);
+}
+
+.eiImg1 {
+    position: absolute;
+    top: 100px;
+    left: -80px;
+    width: 140px;
+    height: 140px;
+    transform: rotate(-240deg)
+
 }
