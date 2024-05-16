@@ -170,3 +170,127 @@
     transform: rotate(-240deg)
 
 }
+
+.sideBar{
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+}
+
+.sideBarBG{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(32, 32, 52);
+    opacity: 30%;
+
+}
+
+.topNameSquare {
+    position: absolute;
+    top: 50px;
+    left: 25px;
+    height: 40px;
+    width: 235px;
+    background-color: rgb(195, 135, 230);
+    transform: rotate(355deg) skew(135deg);
+    z-index: 1;
+}
+
+.bottomNameSquare {
+    position: absolute;
+    top: 126px;
+    left: 30px;
+    height: 20px;
+    width: 235px;
+    background-color: rgb(195, 135, 230);
+    transform: rotate(359deg) skew(65deg);
+    z-index: 1;
+}
+
+.midNameSquare1 {
+    position: absolute;
+    top: 80px;
+    left: 35px;
+    height: 60px;
+    width: 190px;
+    background-color: rgb(30, 29, 31);
+    z-index: 0;
+}
+
+.midNameSquare2 {
+    position: absolute;
+    top: 110px;
+    left: 7px;
+    height: 10px;
+    width: 190px;
+    background-color: rgb(30, 29, 31)d;
+    z-index: 0;
+}
+
+.midNameSquare3 {
+    position: absolute;
+    top: 47px;
+    left: 180px;
+    height: 95px;
+    width: 80px;
+    background-color: rgb(30, 29, 31);
+    z-index: 0;
+}
+
+.eiName {
+    position: absolute;
+    top: 68px;
+    left: 65px;
+    color:rgb(231, 219, 243);
+    -webkit-text-stroke: 1.5px #1e072d;
+    font-family: "bahnschrift";
+    font-weight: bold;
+    font-size: 34px;
+    z-index: 2;
+    word-wrap: break-all;
+    white-space: normal;
+    width: 200px;
+    text-indent: -0.8em;
+    line-height: 35px;
+}
+
+.nameSquare {
+    opacity: 95%;
+}
+
+.sideBarText {
+    position: absolute;
+    width: 95%;
+    height: 70%;
+    bottom: 0;
+    left: 20px;
+}
+
+.effectText {
+    color: rgb(0, 0, 0);
+    font-family: "bahnschrift";
+    font-weight: bold;
+    font-size: 20px;
+    word-wrap: break-all;
+    white-space: normal;
+}
+
+.textBar {
+    width: 80%;
+    height: 3px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    background-color: #1e072d;
+    border-radius: 20px;
+}
+
+.descText {
+    color: rgb(0, 0, 0);
+    font-family: "bahnschrift";
+    font-size: 16px;
+    word-wrap: break-all;
+    white-space: normal;
+}
